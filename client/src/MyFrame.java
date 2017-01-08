@@ -58,13 +58,10 @@ public class MyFrame extends JFrame implements ActionListener{
 		JPanel pan2=new JPanel();
 		pan2.setLayout(new GridLayout(4,4));
 		for(int i=0; i<16; i++){
-			try {
-				ikonki[i] = new ImageIcon(ImageIO.read(new File("img/"+i+".png")));
+
+				ikonki[i] = new ImageIcon(getClass().getResource(""+i+".png"));
 				pionki[i] = new JButton(ikonki[i]);
-			} catch (IOException e) {
-				e.printStackTrace();
-				pionki[i] = new JButton(""+i);
-			}
+
 			pionki[i].addActionListener(this);
 		
 			pan2.add(pionki[i]);
