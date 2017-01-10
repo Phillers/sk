@@ -31,6 +31,10 @@ public class Link {
 						if(is.read(serverMessage)<0)throw new IOException();
 						if(serverMessage[0]<0)throw new IOException();
 						MyFrame.number(serverMessage[0]);
+						if(serverMessage[0]>=34){
+							close();
+							return;
+						}
 					} catch (IOException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
